@@ -1,31 +1,39 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import styles from "../../css/card.module.css"
-import { Link } from "react-router-dom";
+import { getCountriesById } from "../../Redux/actions";
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
 
+const Detail = (props) => {
+  
+  const { id } = useParams();
+  const detail = useSelector((state) => state.detail);
+  const dispatch = useDispatch();
 
-class Card extends React.Component {
-  constructor(props){
-    super(props)
-  }
-  render() {
-    return (
-      <div className={styles.card}>
-        <div className={styles.Cardinner}>
-        <p>ID: {this.props.id} </p>
-        <p>Name: {this.props.name} </p>
-        <p>Continent: {this.props.continent} </p>
-        <p>Capital: {this.props.continent} </p>
-        <p>Subregion: {this.props.continent} </p>
-        <p>Area: {this.props.continent} </p>
-        <p>Population: {this.props.continent} </p>
-        <img src={this.props.flags} alt='flag'/>
-        
-        </div>
-        
+  useEffect(() => {
+    dispatch(getCountriesById(id));
+  }, [dispatch, id]);
+
+  console.log(detail);
+  return (
+    <div className={styles.card}>
+      <div className={styles.Cardinner}>
+      <p>ID: {detail.id} </p>
+      <p>Name: {detail.name} </p>
+      <p>Continent: {detail.continents} </p>
+      <p>Capital: {detail.capital} </p>
+      <p>Subregion: {detail.subregion} </p>
+      <p>Area: {detail.area} </p>
+      <p>Population: {detail.poblacion} </p>
+      <img src={detail.flags} alt='flag'/>
+      
       </div>
       
-    )
-  }
+    </div>
+    
+  )
 }
+  
 
-export default Card;
+export default Detail;

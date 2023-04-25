@@ -1,8 +1,16 @@
-const { Country } = require("../db");
+const { Country, Activity } = require("../db");
 
 const getAllCountries = async () => {
     
-        const allCountries = await Country.findAll();
+        const allCountries = await Country.findAll({
+                include: {
+                        model: Activity,
+                        attributes: ["nombre"],
+                        through: {
+                                attributes: [],
+                        },
+                },
+        });
 
         return allCountries;
     

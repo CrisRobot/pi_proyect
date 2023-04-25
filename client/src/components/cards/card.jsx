@@ -3,9 +3,9 @@ import styles from "../../css/card.module.css"
 import { Link } from "react-router-dom";
 
 
-class Card extends React.Component {
-  constructor(props){
-    super(props)
+class Card extends React.Component {// eslint-disable-next-line
+  constructor(props){ // eslint-disable-next-line
+    super(props)// eslint-disable-next-line
   }
   render() {
     return (

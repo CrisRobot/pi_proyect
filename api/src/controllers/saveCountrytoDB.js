@@ -9,10 +9,11 @@ const countryShape = (data) => {
                 flags: data.flags[0],
                 continents: data.continents[0],
                 region: data.region,
-                capital: data.capital,
-                subregion: data.subregion,
+                capital: data.capital !== undefined ? data.capital[0] : 'This country does not have a defined capital',
+                subregion: data.subregion !== undefined ? data.subregion : 'This country does not have a defined subregion',
                 area: data.area,
-                poblacion: data.poblacion
+                poblacion: data.population,
+                
             }
   };
 
