@@ -29,10 +29,12 @@ dispatch(getCountriesById(e.target.value))
                 <div key = {char.id} className={styles.flipcard}>
                     <div className={styles.flipcardinner}>
                         <div className={styles.cardfront}>
-                            <p>Name:{char.name}</p>
-                            <p>Continent:{char.continents} </p>
+                            <p>Name: {char.name}</p>
+                            <p>Continent: {char.continents} </p>
                             <Link to={`/home/${char.id}`}>
-                            <button value={char.id}
+                            <button 
+                            className={styles.btn}
+                            value={char.id}
                             onClick={(e)=>handleDetail(e)}>details</button>
                             </Link>
 

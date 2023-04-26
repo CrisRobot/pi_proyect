@@ -58,3 +58,7 @@ export const getCountriesById =  (id) => {
       payload: data.data}));
   };
 }
+
+export const searchCountries = () => {
+  
+}

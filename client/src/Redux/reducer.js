@@ -20,7 +20,7 @@ switch(action.type){
     return {...state, countries: action.payload, copy: action.payload};
 
   case GET_COUNTRIES_BY_NAME:
-      return{...state, countries: state.countries.filter(
+      return{...state, countries: state.copy.filter(
       (char) => char.name.toLowerCase().includes(action.payload))};
 
   case SORT_UP:

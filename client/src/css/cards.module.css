@@ -17,34 +17,29 @@
 
 
 
-.cardfront, .cardback{
+.cardfront{
     display: flex;
     flex-direction: column;
+    text-align: center;
     align-items: center;
     justify-content: center;
-    background-color:black;
-    color: white;
+    background-color: white;
+    color: black;
     border-radius: 2rem;
     width: 15rem;
     height: 20rem;
     backface-visibility: hidden;
 }
 
-.cardback{
-    position: absolute;
-    top: 0;
-    width: 15rem;
-    height: 20rem;
-    color: white;
-    transform: rotateY(180deg);
-    font-size: 1vw;
-    backdrop-filter: blur(1px);
-    background: rgba(255, 255, 255, .1);
-    box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, .5);
+.flags{
+    width: 13rem;
+    height: 8rem;
+    border-radius: 1rem;
 
 }
 
-.flags{
-    width: 13rem;
+.btn{
+    width: 4rem;
     border-radius: 1rem;
+    cursor: pointer;
 }

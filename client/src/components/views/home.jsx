@@ -145,9 +145,9 @@ const Home = () => {
                     <option value="Antarctica">Antarctica</option>
                 </select>
             </div>
-            <div className={styles.select}> 
+            <div> 
                 <Link to="/create">
-                    <button type="submit">Create</button>
+                    <button  className={styles.create}>CREATE</button>
                 </Link>
                 
             </div>
